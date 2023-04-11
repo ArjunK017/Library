@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher's Page</title>
+    <link rel="website icon" type="png" href="{% static 'images/Capture.PNG' %}">
+</head>
+<body>
+    <div class= "container">
+        <div class="container">
+            <h1> hello {{ user.username }} your role is Teacher</h1>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <h1> <a class="read_more" href="{% url 'logout_view' %}">LOGOUT</a> </h1>
+        </div>
+    </div>
+</body>
+</html>
