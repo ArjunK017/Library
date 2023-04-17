@@ -1,21 +1,65 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Teacher's Page</title>
-    <link rel="website icon" type="png" href="{% static 'images/Capture.PNG' %}">
-</head>
-<body>
-    <div class= "container">
-        <div class="container">
-            <h1> hello {{ user.username }} your role is Teacher</h1>
-        </div>
-        <br>
-        <br>
-        <div class="container">
-            <h1> <a class="read_more" href="{% url 'logout_view' %}">LOGOUT</a> </h1>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <title>Teacher page</title>
+    <link rel="stylesheet" href="{% static 'css/t_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fa fa-arrow-circle-left" id="cancel"></i>
+    </label>
+    <header>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="{% url 'snotification' %}">Notifications</a></li>
+                <li><a href="{% url 'bookren' %}">Reserve book</a></li>
+                <li><a href="{% url 'tableb' %}">Table booking</a></li>
+            </ul>
+        </nav>
+        <form action="#" method="get" class="search-form">
+          <input type="text" placeholder="Search..." class="search-bar">
+          <button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+        
+    </header>
+    <div id="mobile__menu" class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a href="#">Notifications</a>
+            <a href="#">alerts</a>
+            <a href="#">About</a>
         </div>
     </div>
-</body>
+    <div class="sidebar">
+        <a class="logo" href="/"><img src="{% static 'images/teach.png' %}" alt="logo"></a>
+        <h1 class="sp">{{ user.username }}</h1>
+    <ul>
+     <li><a href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a></li>
+     <li><a href="{% url 'borrowbook' %}"><i class="fa fa-book" aria-hidden="true"></i>Borrowed Books</a></li>
+     <li><a href="{% url 'borrowhistory' %}"><i class="fa fa-history" aria-hidden="true"></i>Borrow History</a></li>
+     <li><a href="{% url 'reserve' %}"><i class="fas fa-stream"></i>Reserved Books </a></li>
+     <li><a href="{% url 'about' %}"><i class="far fa-question-circle"></i>About</a></li>
+     <li><a href="{% url 'contact' %}"><i class="far fa-envelope"></i>Contact us</a></li>
+     <li><a href="{% url 'logout_view' %}"><i class="fa fa-times-circle" aria-hidden="true"></i>Logout</a></li>
+
+    </ul>
+   </div>
+   <div class="container">
+    <h1 style="text-align:center"> Welcome {{ user.username }}, To Teacher Page</h1>
+  </div>
+   <section>
+   </section>
+   <footer>
+   </footer>
+  </body>
 </html>

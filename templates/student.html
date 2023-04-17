@@ -43,20 +43,22 @@
     <script type="text/javascript" src="mobile.js"></script>
     <div class="sidebar">
         <a class="logo" href="/"><img src="{% static 'images/stud.png' %}" alt="logo"></a>
-        <h1 class="sp">Student page</h1>
+        <h1 class="sp">{{ user.username }}</h1>
     <ul>
-     <li><a href="mypro.html"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a></li>
-     <li><a href="borowbooks.html"><i class="fa fa-book" aria-hidden="true"></i>Borrowed books</a></li>
-     <li><a href="history.html"><i class="fa fa-history" aria-hidden="true"></i>Borrow History</a></li>
-     <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
-     <li><a href="#"><i class="fa fa-times-circle" aria-hidden="true"></i>Logout</a></li>
-     <li><a href="#"><i class="fas fa-stream"></i>Reserved Books </a></li>
-     <li><a href="#"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Fine</a></li>
-     <li><a href="#"><i class="far fa-question-circle"></i>About</a></li>
+     <li><a href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i>My Profile</a></li>
+     <li><a href="{% url 'borrowbook' %}"><i class="fa fa-book" aria-hidden="true"></i>Borrowed Books</a></li>
+     <li><a href="{% url 'borrowhistory' %}"><i class="fa fa-history" aria-hidden="true"></i>Borrow History</a></li>
+     <li><a href="{% url 'reserve' %}"><i class="fas fa-stream"></i>Reserved Books </a></li>
+     <li><a href="{% url 'fine' %}"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Fine</a></li>
+     <li><a href="{% url 'logout_view' %}"><i class="fa fa-times-circle" aria-hidden="true"></i>Logout</a></li>
+     <li><a href="{% url 'about' %}"><i class="far fa-question-circle"></i>About</a></li>
      <li><a href="#"><i class="far fa-envelope"></i>Contact us</a></li>
 
     </ul>
    </div>
+   <div class="container">
+    <h1 style="text-align:center"> Welcome {{ user.username }} , To Student Page</h1>
+  </div>
    <section>
    </section>
    <footer>

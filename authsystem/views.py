@@ -14,7 +14,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             msg = 'user created'
-            return redirect('login_view')
+            return redirect('adminpage')
         else:
             msg = 'form is not valid'
     else:
@@ -63,3 +63,25 @@ def bookrenewal(request):
     return render(request, 'bookrenewal.html')
 def tablebook(request):
     return render(request, 'tablebook.html')
+def s_about(request):
+    return render(request, 's_about.html')
+def s_fine(request):
+    return render(request, 's_fine.html')
+def s_reserve(request):
+    return render(request, 's_reserve.html')
+def s_borrowbook(request):
+    return render(request, 's_borrowbook.html')
+def s_borrowhistory(request):
+    return render(request, 's_borrowhistory.html')
+def s_profile(request):
+    return render(request, 's_profile.html')
+def contact(request):
+    return render(request, 'contact.html')
+def bookstats(request):
+    return render(request, 'bookstats.html')
+def bookupdate(request):
+    return render(request, 'bookupdate.html')
+def fineimpo(request):
+    return render(request, 'fineimpo.html')
+def datamanip(request):
+    return render(request, 'datamanipulation.html')
